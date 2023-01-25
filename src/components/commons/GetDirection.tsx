@@ -38,7 +38,7 @@ const GetDirection = (props: GetDirection) => {
 
   return (
     <a onClick={GetDirectionUrl}  className=" py-4 px-6 text-base font-bold text-white rounded-lg drop-shadow-md primary-cta" rel="noopener noreferrer" >
-      <button>{"GetDirection"}</button>
+      <button style={{width:"150px", backgroundColor:"black" ,borderRadius:"10px"}}>{"GetDirection"}</button>
     </a>
   );
 };
