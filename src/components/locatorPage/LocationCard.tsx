@@ -29,7 +29,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
       setTimeStatus("");
     }
   }
-  console.log(LocationCard,"fudhsv")
+  //console.log(LocationCard,"fudhsv")
 
   return (
   <>

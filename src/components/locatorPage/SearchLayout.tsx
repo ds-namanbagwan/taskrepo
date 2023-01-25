@@ -231,29 +231,11 @@ const optionClickHandler = () =>{
 
                     },
                     {
-                      entityType: "location",
-                      fieldApiName: "address.line1",
-
-                    },
-                    {
-                      entityType: "location",
-                      fieldApiName: "address.line2",
-
-                    },
-                    {
-                      entityType: "location",
-                      fieldApiName: "address.city",
-
-                    },
-                    {
-                      entityType: "location",
-                      fieldApiName: "address.postalCode",
-
-                    },
-                    // {
-                    //   entityType: "location",
-                    //   fieldApiName: "builtin.location",                        
-                    // },
+                      entityType:"location",
+                      fieldApiName:"address.city"
+                    }
+        
+                   
                   ]}
                   
                 />
