@@ -29,18 +29,21 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
       setTimeStatus("");
     }
   }
+  console.log(LocationCard,"fudhsv")
 
   return (
-  
+  <>
     <div className={`location result`} id={`result-${result.index}`}>
+      <a href={result.rawData.slug}>
       <h3 className="">{result.rawData.name} 
       </h3>
+      </a>
       {/* <p className="text-sm text-slate-700">{address.line1}</p>
       <p className="text-sm text-slate-700">{address.city}, {address.region}, {address.postalCode} </p> */}
       <Address address={address} />
-      <img src="https://www.freepnglogos.com/uploads/mobile-phone-logo-png-1.png" style={{width:"20px"}}></img>{result.rawData.mainPhone}      <GetDirection/>   
+      <img src="https://www.freepnglogos.com/uploads/mobile-phone-logo-png-1.png" style={{width:"20px"}}/>{result.rawData.mainPhone}<GetDirection/>   
     </div >
-    
+    </>
     
   );
 }
