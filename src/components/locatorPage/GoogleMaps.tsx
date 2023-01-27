@@ -7,9 +7,11 @@ import { twMerge, useComposedCssClasses } from '..//../hooks/useComposedCssClass
 import Mapicon from "..//../images/map-pin.svg";
 import MapiconHover from "..//../images/map-pin-hover.svg";
 import UserMarker from "..//../images/map-center.png";
+import Text from "..//../images/images.png"
 import Hours from '..//../components/commons/hours';
 import {renderToString} from "react-dom/server";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
+
 
 /**
  * CSS class interface for the {@link GoogleMaps} component
@@ -87,13 +89,13 @@ function UnwrappedGoogleMaps({
   if (noResults && !showEmptyMap) {
     containerCssClass = twMerge(cssClasses.googleMapsContainer, 'hidden');
   }
-  let  pinStyles = {
-    fill: "#4e9c34", //default google red
-    stroke: "#4e9c34",
-    text: "white",
-    fill_selected: "#2c702e",
-    stroke_selected: "#4e9c34",
-    text_selected: "white",
+  let pinStyles = {
+    fill: "black", //default google red
+    stroke: "black",
+    text: "black",
+    fill_selected: "black",
+    stroke_selected: "black",
+    text_selected: "black",
   };
 
  let marker_icon = {
@@ -149,7 +151,7 @@ function sleep(ms) {
 
   const bounds = new google.maps.LatLngBounds();
   const markerPins = useRef<google.maps.Marker[]>([]);
-  const usermarker = useRef<google.maps.Marker[]>([]);
+  const Text = useRef<google.maps.Marker[]>([]);
   deleteMarkers();
   userdeleteMarkers();
 
@@ -163,9 +165,9 @@ function sleep(ms) {
   const Usermarker1 = new google.maps.Marker({
     position,
     map,
-    icon:UserMarker
+    icon:Text
   });
-  usermarker.current.push(Usermarker1);
+  Text.current.push(Usermarker1);
 
   try{if(mapMarkerClusterer){mapMarkerClusterer.clearMarkers();}}catch(e){}
   let index = 0;
@@ -178,7 +180,7 @@ function sleep(ms) {
       icon: marker_icon,
       label: {
         text: String(markerLabel),
-        color: "#fff",
+        color: "black",
       },
     });
    
@@ -275,7 +277,7 @@ for (let i = 0; i < markerPins.current.length; i++) {
     let markerLabel = Number(i + 1 );
     markerPins.current[i].setLabel({
       text: markerLabel,
-      color: "#fff",
+      color: "",
       });         
       // removeActiveGrid();
   })
@@ -306,7 +308,12 @@ function Infowindow(i:Number,result:any):void{
     const MarkerContent=         
         (
         <div className="markerContent w-48 md:w-[350px] font-universpro font-normal text-darkgrey text-xs md:text-sm leading-6">
-        <div className="nameData font-bold text-sm md:text-base">{result.name}</div>
+        <div className="nameData font-bold text-sm md:text-base">{result.name}</div> 
+        <div className="nameData font-bold text-sm md:text-base">{result.rawData.address.line1}</div>
+        <div className="nameData font-bold text-sm md:text-base">{result.rawData.address.region},{result.rawData.address.city}</div>
+        <div className="nameData font-bold text-sm md:text-base">{result.rawData.address.state}{result.rawData.address.postalCode}</div>
+
+        <button style={{backgroundColor:"black",color:"white", width:"110px",borderRadius:"10px"}}>ORDER NOW</button>
         </div>
         );
     let string=renderToString(MarkerContent);    
@@ -321,10 +328,10 @@ function Infowindow(i:Number,result:any):void{
   }
 
   function userdeleteMarkers(): void {
-    for (let i = 0; i < usermarker.current.length; i++) {
-      usermarker.current[i].setMap(null);
+    for (let i = 0; i < Text.current.length; i++) {
+      Text.current[i].setMap(null);
     }
-    usermarker.current = [];
+    Text.current = [];
   }
 
   return (

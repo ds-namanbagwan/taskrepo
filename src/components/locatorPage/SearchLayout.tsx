@@ -14,6 +14,8 @@ import FilterAwesome from "./FilterAwesome";
 import PerfectScrollbar from 'react-perfect-scrollbar'; 
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
+
+
 const SearchLayout = (): JSX.Element => {
 
   const searchActions = useSearchActions();
@@ -44,28 +46,28 @@ const SearchLayout = (): JSX.Element => {
 
   const onLoadData = () =>{
         
-      // if (navigator.geolocation) {
-      //   navigator.geolocation.getCurrentPosition(function (position) {                
-      //     searchActions.setUserLocation({
-      //       latitude:position.coords.latitude,
-      //       longitude:position.coords.longitude
-      //     });
-      //     setCenterLatitude(position.coords.latitude);
-      //     setCenterLongitude(position.coords.longitude);
-      //     searchActions.setVerticalLimit(limit);
-      //     searchActions.executeVerticalQuery();
-      //     }, function(error) {
-      //       if (error.code == error.PERMISSION_DENIED){
-      //       searchActions.setUserLocation({
-      //         latitude:centerLatitude,
-      //         longitude:centerLongitude
-      //       });
-      //       searchActions.setVerticalLimit(limit);
-      //       searchActions.executeVerticalQuery();
-      //     }
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {                
+          searchActions.setUserLocation({
+            latitude:position.coords.latitude,
+            longitude:position.coords.longitude
+          });
+          setCenterLatitude(position.coords.latitude);
+          setCenterLongitude(position.coords.longitude);
+          searchActions.setVerticalLimit(limit);
+          searchActions.executeVerticalQuery();
+          }, function(error) {
+            if (error.code == error.PERMISSION_DENIED){
+            searchActions.setUserLocation({
+              latitude:centerLatitude,
+              longitude:centerLongitude
+            });
+            searchActions.setVerticalLimit(limit);
+            searchActions.executeVerticalQuery();
+          }
 
-      //     });            
-      // }
+          });            
+      }
 
       searchActions.setUserLocation({
         latitude:centerLatitude,
@@ -208,16 +210,17 @@ const optionClickHandler = () =>{
 
   return (
     <>
+   
       <div className="locator-full-width">
         <div className="locator-container">
           <div className="result-listing">
-            <div className="search-block">
+            <div className="search-block" style={{backgroundColor:"white"}}>
 
-              <h3 className="title">
-                Find Restaurants
-              </h3>
+              <h2 className="title">
+               Search our Restaurants..............
+              </h2>
               {/* <LocationBias />  */}
-              <div className="search-form">
+              <div className="search-form" style={{backgroundColor:"black"}}>
                 <FilterSearch
                   customCssClasses={{
                     filterSearchContainer: "",
@@ -232,14 +235,18 @@ const optionClickHandler = () =>{
                     },
                     {
                       entityType:"location",
-                      fieldApiName:"address.city"
+                      fieldApiName:"address.city",
+                    },
+                    {
+                      entityType:"location",
+                      fieldApiName:"address.postalCode",
                     }
         
                    
                   ]}
                   
                 />
-                <button
+                <button style={{backgroundColor:"black"}}
                   className="button"
                   aria-label="Search bar icon"
                   id="search-location-button" onClick={Findinput}><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" className="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -285,12 +292,13 @@ const optionClickHandler = () =>{
               apiKey={googleMapsConfig.googleMapsApiKey}
               centerLatitude={centerLatitude}
               centerLongitude={centerLongitude}
-              defaultZoom={6}
+              defaultZoom={5}
               showEmptyMap={true}
             />
           </div>
         </div>
       </div>
+      
     </>
   );
 };

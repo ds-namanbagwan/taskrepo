@@ -1,4 +1,5 @@
 import * as React from "react";
+import Address from "../commons/Address";
 
 const BreadCrumbs = (props:any) => {
   const { name, parents, baseUrl } = props;
@@ -23,7 +24,7 @@ const BreadCrumbs = (props:any) => {
   return (
     <div className="section flex gap-x-2">
       {breadcrumbs}
-      {name}
+      {name}      
     </div>
   );
 };

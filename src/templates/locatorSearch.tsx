@@ -14,19 +14,19 @@ export const getPath: GetPath<TemplateProps> = () => {
   return `/locatorSearch`;
 };
 
-/*
-export const config: TemplateConfig = {
-  stream: {
-    $id: "locatorSearch",
-    localization: {
-      locales: ["en"],
-      primary: false,
-    },
-    filter: {},
-    fields: []
-  },
-};
-*/
+
+// export const config: TemplateConfig = {
+//   stream: {
+//     $id: "locatorSearch",
+//     localization: {
+//       locales: ["en"],
+//       primary: false,
+//     },
+//     filter: {},
+//     fields: []
+//   },
+// };
+
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefixToRoot, path, document}): HeadConfig => {
   return {
     title: document.name,
@@ -53,6 +53,7 @@ const providerOptions: google.maps.MapOptions = {
 
 return (
     <>
+    <div style={{backgroundColor:"white"}}>
   <PageLayout>
         <SearchHeadlessProvider
             experienceKey={AnswerExperienceConfig.experienceKey}
@@ -62,10 +63,11 @@ return (
             experienceVersion={AnswerExperienceConfig.experienceVersion}
             sessionTrackingEnabled={AnswerExperienceConfig.sessionTrackingEnabled}  
             endpoints={AnswerExperienceConfig.endpoints}         
-        ><SearchLayout/>           
+        ><SearchLayout/>          
         </SearchHeadlessProvider>
         <GetDirection/>
-        </PageLayout>   
+  </PageLayout>
+        </div>   
     </>
   );
 };
