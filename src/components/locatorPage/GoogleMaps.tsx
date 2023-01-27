@@ -312,7 +312,7 @@ function Infowindow(i:Number,result:any):void{
         <div className="nameData font-bold text-sm md:text-base">{result.rawData.address.line1}</div>
         <div className="nameData font-bold text-sm md:text-base">{result.rawData.address.region},{result.rawData.address.city}</div>
         <div className="nameData font-bold text-sm md:text-base">{result.rawData.address.state}{result.rawData.address.postalCode}</div>
-
+        <div className="nameData font-bold text-sm md:text-base" style={{color:"orange"}}>{metersToMiles(result.distance)} Miles</div>
         <button style={{backgroundColor:"black",color:"white", width:"110px",borderRadius:"10px"}}>ORDER NOW</button>
         </div>
         );

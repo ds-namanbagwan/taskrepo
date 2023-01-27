@@ -40,7 +40,7 @@ const Footer = () => {
             <div className="container">               
                <div className="footer_links">                 
                   <div className="column"style={{backgroundColor:"black"}}>
-                     <h5 style={{color:"white"}}>About Prezzo</h5>
+                     <h5 style={{color:"white"}}>About</h5>
                      <ul style={{color:"white"}}>
                         <li ><a href="https://jobs.prezzorestaurants.co.uk/" title="Careers">Careers</a></li>
                         <li><a href="/community-commitments/" title="Community Commitments">Community Commitments</a></li>

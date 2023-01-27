@@ -25,17 +25,17 @@ const links: Link[] = [
     url: "#",
   },
   {
-    label: "E-gifts",
+    label: "Book",
     url: "#",
   },
   {
-    label: "Christmas",
+    label: "Find Our Restro",
     url: "#",
   },
-  {
-    label: "Working with us",
-    url: "#",
-  }
+  // {
+  //   label: "Working with us",
+  //   url: "#",
+  // }
 ];
 
 const Header = () => {

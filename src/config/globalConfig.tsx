@@ -13,8 +13,8 @@ export const savedFilterId = "";
 export const entityTypes = "location";
 
 export const googleMapsConfig =  {
-    centerLatitude:	51.5095146286,
-    centerLongitude:-0.1244828354,
+    centerLatitude:	26.8893,
+    centerLongitude:75.8360,
     googleMapsApiKey: "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18"   
 };
 

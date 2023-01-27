@@ -220,7 +220,7 @@ const optionClickHandler = () =>{
                Search our Restaurants..............
               </h2>
               {/* <LocationBias />  */}
-              <div className="search-form" style={{backgroundColor:"black"}}>
+              <div className="search-form" style={{backgroundColor:"white",color:"black"}}>
                 <FilterSearch
                   customCssClasses={{
                     filterSearchContainer: "",
