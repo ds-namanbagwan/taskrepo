@@ -1,14 +1,19 @@
 {
   "$id": "site-entity",
   "filter": {
-    "entityIds": ["siteGlobalData"] 
+    "entityIds": ["header&footer"] 
   },
   "source": "knowledgeGraph",
   "fields": [
     "name",
-    "facebookPageUrl",
-    "instagramHandle",
-    "twitterHandle"
+    "c_restroimage",
+    "c_headerLink",
+    "c_footerimage",
+    "c_footerLink",
+    "mainPhone",
+    "fax",
+    "emails"
+
   ],
   "localization": {
     "locales": ["en"],

@@ -91,7 +91,8 @@ import {
     path,
     document,
   }) => {
-    const {   
+    const { 
+      _site,  
       name,
       address,          
       description, 
@@ -118,7 +119,7 @@ import {
   
     return (
       <>
-      <Header/>    
+      <Header />    
          
           <div className="centered-container" style={{backgroundColor:"white"}}>
             <div className="section">

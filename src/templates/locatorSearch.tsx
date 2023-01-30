@@ -10,6 +10,9 @@ import GetDirection from "../components/commons/GetDirection";
 import {  AnswerExperienceConfig  } from "../config/globalConfig";
 import { GridAlgorithm } from "@googlemaps/markerclusterer";
 import NearByLocations from "../components/locationDetails/NearByLocations";
+import Footer from "../components/layouts/footer";
+import Header from "../components/layouts/header";
+import Footer1 from "../components/layouts/Footer1";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return `/locatorSearch`;
@@ -55,7 +58,7 @@ const providerOptions: google.maps.MapOptions = {
 return (
     <>
     <div style={{backgroundColor:"white"}}>
-  <PageLayout>
+      <Header label={_site.c_headerLink} image={_site.c_restroimage}/> 
         <SearchHeadlessProvider
             experienceKey={AnswerExperienceConfig.experienceKey}
             locale={AnswerExperienceConfig.locale}
@@ -66,10 +69,9 @@ return (
             endpoints={AnswerExperienceConfig.endpoints}         
         ><SearchLayout/>          
         </SearchHeadlessProvider>
-        <GetDirection/>
-        
-  </PageLayout>
-        </div>   
+        <GetDirection/>   
+        <Footer1  _site={_site} />
+    </div>   
     </>
   );
 };

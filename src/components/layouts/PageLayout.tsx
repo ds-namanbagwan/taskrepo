@@ -1,27 +1,36 @@
 import * as React from "react";
-import Img, { Image } from "./Img";
-import Header from "./header";
 import Footer from "./footer";
+ import Header from "./header";
+// import Header from "./headerself";
 
 type Props = {
     title?: string;
     _site?: any;
+    global:any;
     children?: React.ReactNode;
 };
   
   const PageLayout = ({
     title,
     _site,
+    global,
     children,
   }: Props) => {
-    return (
-        <div className="min-h-screen">
-            <Header />
-                {children}
-            <Footer />
-        </div>
+    console.log(_site,"_sitejjjuj");
+
+    return ( 
+    <>
+      {typeof global!= "undefined" ?
+        <Header _site={global} /> 
+        :''}
+        {children}
+        {typeof global!= "undefined" ?
+        <Footer footer={global}/> 
+        :''}  
+
+    </>
     );
-  };
+    };
 
 export default PageLayout;
   
