@@ -38,7 +38,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     <div className={`location result`} id={`result-${result.index}`}>
     <div>
       <a href={result.rawData.slug}>
-      <h3 className="">{result.rawData.name} 
+      <h3 className="" style={{color:"brown", fontSize:"30px"}}>{result.rawData.name} 
       </h3>
       </a>
       <div style={{marginLeft:"350px",color:"orange",fontSize:"16px"}}>{metersToMiles(result.distance)} Miles</div>

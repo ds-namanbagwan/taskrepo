@@ -9,6 +9,7 @@ import SearchLayout from "../components/locatorPage/SearchLayout";
 import GetDirection from "../components/commons/GetDirection";
 import {  AnswerExperienceConfig  } from "../config/globalConfig";
 import { GridAlgorithm } from "@googlemaps/markerclusterer";
+import NearByLocations from "../components/locationDetails/NearByLocations";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return `/locatorSearch`;
@@ -66,6 +67,7 @@ return (
         ><SearchLayout/>          
         </SearchHeadlessProvider>
         <GetDirection/>
+        
   </PageLayout>
         </div>   
     </>

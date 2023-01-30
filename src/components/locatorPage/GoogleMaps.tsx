@@ -11,7 +11,7 @@ import Text from "..//../images/images.png"
 import Hours from '..//../components/commons/hours';
 import {renderToString} from "react-dom/server";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
-
+import GetDirection from "..//../components/commons/GetDirection";
 
 /**
  * CSS class interface for the {@link GoogleMaps} component
@@ -314,6 +314,7 @@ function Infowindow(i:Number,result:any):void{
         <div className="nameData font-bold text-sm md:text-base">{result.rawData.address.state}{result.rawData.address.postalCode}</div>
         <div className="nameData font-bold text-sm md:text-base" style={{color:"orange"}}>{metersToMiles(result.distance)} Miles</div>
         <button style={{backgroundColor:"black",color:"white", width:"110px",borderRadius:"10px"}}>ORDER NOW</button>
+        <GetDirection/>
         </div>
         );
     let string=renderToString(MarkerContent);    

@@ -105,7 +105,7 @@ import {
   
     const[data,setData]=React.useState([]);
     React.useEffect(()=>{
-      fetch("https://liveapi-sandbox.yext.com/v2/accounts/me/entities?api_key=d60994ed113be6d9714d9dcbae2bc189&v=20230110&entityTypes=location&entityTypes=location/items?offset=0&limit=16")
+      fetch("https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=100&location=newyork&limit=17&api_key=d60994ed113be6d9714d9dcbae2bc189&v=20181201&entityTypes=location&offset=4")
       .then((res)=>res.json())
       .then((json)=>{
         setData(json.response.entities)
@@ -119,8 +119,8 @@ import {
     return (
       <>
       <Header/>    
-          <div>
-          <div className="centered-container">
+         
+          <div className="centered-container" style={{backgroundColor:"white"}}>
             <div className="section">
               <div className="grid grid-cols-2 gap-x-10 gap-y-10">
                 <div
@@ -144,9 +144,14 @@ import {
                   <div className="text-xl font-semibold"style={{color: "black", fontFamily: "cursive" }}>{`About ${name}`}</div>
                   <p className="pt-4"style={{ color: "black", fontFamily: "cursive" }}>{description}</p>
                 </div>               
-               <div className="bg-gray-100">{images}</div>             
+               <div className="bg-gray-100">{images}</div>
+               </div> 
+               </div>
+            </div>  
+            <br />
+            <div className="flex" style={{backgroundColor:"white",justifyContent:"center"}}>          
                {data.map((res:any)=>{
-          return<section style={{width:"250px"}}>        
+          return<section style={{width:"550px"}}>        
             <div className="border-2 border-lightblue-600 pt-4 pb-4 pl-4 pr-4" >
             <a href={res.slug} style={{color:"blue"}}>{res.name}</a>
             <address>Address:-{res.address.line1}</address>
@@ -156,14 +161,21 @@ import {
             </div>
           </section>      
         })}
-              </div>
-            </div>      
-             {/* <div><StaticMap latitude={yextDisplayCoordinate.latitude}  longitude={yextDisplayCoordinate.longitude}/></div> */}
-          </div>        
         </div>
-        
+                    
+             {/* <div><StaticMap latitude={yextDisplayCoordinate.latitude}  longitude={yextDisplayCoordinate.longitude}/></div> */}
+             
+               
         <Footer />
       </>    
     );
   };
   export default Location;
+
+
+
+
+
+
+
+
