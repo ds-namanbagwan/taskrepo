@@ -12,6 +12,8 @@ import {
   import "../index.css";
  import Header from "../components/layouts/header";
  import Footer from "../components/layouts/footer";
+ import Header1 from "../components/layouts/Header1";
+ import Footer1 from "../components/layouts/Footer1";
   //import StaticMap from "../components/static-map";
   
   export const config: TemplateConfig = {
@@ -119,7 +121,7 @@ import {
   
     return (
       <>
-      <Header />    
+      <Header1 _site={_site}/>   
          
           <div className="centered-container" style={{backgroundColor:"white"}}>
             <div className="section">
@@ -167,7 +169,7 @@ import {
              {/* <div><StaticMap latitude={yextDisplayCoordinate.latitude}  longitude={yextDisplayCoordinate.longitude}/></div> */}
              
                
-        <Footer />
+        <Footer1 _site={_site}/>
       </>    
     );
   };

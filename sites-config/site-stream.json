@@ -12,7 +12,9 @@
     "c_footerLink",
     "mainPhone",
     "fax",
-    "emails"
+    "emails",
+    "c_sidefooter",
+    "c_socaldata"
 
   ],
   "localization": {

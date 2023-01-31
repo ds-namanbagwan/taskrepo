@@ -9,7 +9,7 @@ type Link = {
 
 const Header =(Link:any)=>{
   const {label,image } =Link
-    console.log(label,"hkjhasdf")
+    //console.log(label,"hkjhasdf")
 
   React.useEffect(()=>{
       document.body.setAttribute("id","body");
@@ -28,8 +28,10 @@ const Header =(Link:any)=>{
   const labe =label?.map((lables:any)=>{
     // console.log(lables,"hkjhasdf")
     return(
-      <>                   
-      {lables.label}  
+      <>  
+      <div>   
+      {lables.label} 
+      </div>     
      </>
     )
   });     
@@ -37,11 +39,12 @@ const Header =(Link:any)=>{
 
   return (
     <>
+    <div className="flex" >
 <div id="header" className="header-nav" style={{backgroundColor:"white"}}></div> 
 
 <div className="flex" style={{width:"300px"}}>{images}</div>
-<div className="flex">{labe}</div>         
-           
+<div className="flex-flex"><ul><li>{labe}</li></ul></div>         
+</div>          
 </>
 );
 };
