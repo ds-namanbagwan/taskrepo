@@ -1,12 +1,12 @@
 import * as React from "react"
 
 export default function Header1(props:any){
-    console.log(props._site,"_site")
+    // console.log(props._site,"_site")
  return(
     <>
 
-<div className="flex" style={{backgroundColor:"white"}}>
-<div style={{width:"300px"}}>
+<div className="flex w-full" style={{backgroundColor:"white"}}>
+<div style={{width:"200px"}}>
    {props._site.c_restroimage.map((img:any)=>{
         return(
             <>
@@ -16,11 +16,13 @@ export default function Header1(props:any){
     })}
 
    </div>
-   <div className="flex flex-row" style={{width:"1500px",marginTop:"70px"}} >
+   {/* <div className="flex w-full" style={{width:"100px",marginTop:"50px"}} > */}
+   <div className="flex w-full">
    {props._site.c_headerLink.map((res:any)=>{
         return(
             <>        
-           <div style={{width:"1500px",textAlign:"center",fontSize:"25px"}}>
+           {/* <div style={{width:"2000px",textAlign:"center",fontSize:"25px"}}> */}
+           <div className="flex w-full" style={{fontSize:"20px",marginTop:"40px"}}>
           <a href="{res.link}"> {res.label}</a>
            </div>
             </>

@@ -14,6 +14,7 @@ import Footer from "../components/layouts/footer";
 import Header from "../components/layouts/header";
 import Footer1 from "../components/layouts/Footer1";
 import Header1 from "../components/layouts/Header1";
+// import Header from "../components/layouts/header";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return `/locatorSearch`;
